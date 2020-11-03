@@ -42,6 +42,13 @@ class TestAddressBook(unittest.TestCase):
         self.return_to_main_page()
         self.logout()
 
+    def test_add_empty_contact(self):
+        self.open_home_page()
+        self.login(username="admin", password="secret")
+        self.create_contact(Contact())
+        self.return_to_main_page()
+        self.logout()
+
     def return_to_main_page(self):
         self.wd.find_element_by_link_text("home page").click()
 
