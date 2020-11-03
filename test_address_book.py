@@ -6,6 +6,7 @@ import unittest
 
 from selenium.webdriver.support.select import Select
 
+from contact import Contact
 from group import Group
 
 
@@ -33,56 +34,27 @@ class TestAddressBook(unittest.TestCase):
     def test_add_contact(self):
         self.open_home_page()
         self.login(username="admin", password="secret")
-        self.create_contact()
+        self.create_contact(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
+                 title="Cleanliness Director", company="Dixyorochka", address="SPb", home="+78005553535",
+                 mobile="8-800-555-3535", work="8 (800) 555 3535", fax="8 800 555 35 35", email="cdur@oldfiction.book",
+                 homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816", aday="30",
+                 amonth="October", ayear="2020", address2="Msk", phone2="ditto", notes="What are you, Oleg"))
         self.return_to_main_page()
         self.logout()
 
     def return_to_main_page(self):
         self.wd.find_element_by_link_text("home page").click()
 
-    def create_contact(self):
+    def create_contact(self, contact):
         wd = self.wd
         wd.find_element_by_link_text("add new").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("John")
-        wd.find_element_by_name("middlename").clear()
-        wd.find_element_by_name("middlename").send_keys("Vasilyevitch")
-        wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys("Doe")
-        wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys("Gryazny")
-        wd.find_element_by_name("title").clear()
-        wd.find_element_by_name("title").send_keys("Cleanliness Director")
-        wd.find_element_by_name("company").clear()
-        wd.find_element_by_name("company").send_keys("Dixyorochka")
-        wd.find_element_by_name("address").clear()
-        wd.find_element_by_name("address").send_keys("SPb")
-        wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys("+78005553535")
-        wd.find_element_by_name("mobile").clear()
-        wd.find_element_by_name("mobile").send_keys("8-800-555-3535")
-        wd.find_element_by_name("work").clear()
-        wd.find_element_by_name("work").send_keys("8 (800) 555 3535")
-        wd.find_element_by_name("fax").clear()
-        wd.find_element_by_name("fax").send_keys("8 800 555 35 35")
-        wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys("cdur@oldfiction.book")
-        wd.find_element_by_name("homepage").clear()
-        wd.find_element_by_name("homepage").send_keys("localhost/addressbook")
-        Select(wd.find_element_by_name("bday")).select_by_visible_text("1")
-        Select(wd.find_element_by_name("bmonth")).select_by_visible_text("February")
-        wd.find_element_by_name("byear").clear()
-        wd.find_element_by_name("byear").send_keys("1816")
-        Select(wd.find_element_by_name("aday")).select_by_visible_text("30")
-        Select(wd.find_element_by_name("amonth")).select_by_visible_text("October")
-        wd.find_element_by_name("ayear").clear()
-        wd.find_element_by_name("ayear").send_keys("2020")
-        wd.find_element_by_name("address2").clear()
-        wd.find_element_by_name("address2").send_keys("Msk")
-        wd.find_element_by_name("phone2").clear()
-        wd.find_element_by_name("phone2").send_keys("ditto")
-        wd.find_element_by_name("notes").clear()
-        wd.find_element_by_name("notes").send_keys("What are you, Oleg")
+        for field, value in contact.items():
+            element = wd.find_element_by_name(field)
+            if field in contact._selects:
+                Select(element).select_by_visible_text(value)
+            else:
+                element.clear()
+                element.send_keys(value)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
 
     def logout(self):
