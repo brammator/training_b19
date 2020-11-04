@@ -22,6 +22,9 @@ def test_add_group(app, auth):
 def test_add_empty_group(app, auth):
     app.group.create(Group(name="", header="", footer=""))
 
+def test_delete_first_group(app, auth):
+    app.group.delete_first()
+
 def test_add_contact(app, auth):
     app.contact.create(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
                                title="Cleanliness Director", company="Dixyorochka", address="SPb", home="+78005553535",
