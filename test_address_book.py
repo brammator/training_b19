@@ -16,23 +16,16 @@ class TestAddressBook(unittest.TestCase):
         self.wd.implicitly_wait(30)
 
     def test_add_group(self):
-        self.open_home_page()
         self.login(username="admin", password="secret")
-        self.open_groups_page()
         self.create_group(Group(name="Family users", header="Простое лого", footer="Подвал группы"))
-        self.return_to_groups_page()
         self.logout()
 
     def test_add_empty_group(self):
-        self.open_home_page()
         self.login(username="admin", password="secret")
-        self.open_groups_page()
         self.create_group(Group(name="", header="", footer=""))
-        self.return_to_groups_page()
         self.logout()
 
     def test_add_contact(self):
-        self.open_home_page()
         self.login(username="admin", password="secret")
         self.create_contact(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
                  title="Cleanliness Director", company="Dixyorochka", address="SPb", home="+78005553535",
@@ -43,7 +36,6 @@ class TestAddressBook(unittest.TestCase):
         self.logout()
 
     def test_add_empty_contact(self):
-        self.open_home_page()
         self.login(username="admin", password="secret")
         self.create_contact(Contact())
         self.return_to_main_page()
@@ -72,6 +64,7 @@ class TestAddressBook(unittest.TestCase):
 
     def create_group(self, group):
         wd = self.wd
+        self.open_groups_page()
         # добавить новую группу
         wd.find_element_by_name("new").click()
         # заполнить форму добавления группы
@@ -83,12 +76,14 @@ class TestAddressBook(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         # сохранить изменения
         wd.find_element_by_name("submit").click()
+        self.return_to_groups_page()
 
     def open_groups_page(self):
         self.wd.find_element_by_link_text("groups").click()
 
     def login(self, username, password):
         wd = self.wd
+        self.open_home_page()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").clear()
