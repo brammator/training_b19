@@ -38,6 +38,7 @@ class Application:
                 element.clear()
                 element.send_keys(value)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        self.return_to_main_page()
 
     def open_home_page(self):
         self.wd.get("http://localhost/addressbook/")
