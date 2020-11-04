@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import pytest
-from contact import Contact
-from group import Group
-from application import Application
+from model.contact import Contact
+from model.group import Group
+from fixture.application import Application
 
 @pytest.fixture(scope="module")
 def app():
