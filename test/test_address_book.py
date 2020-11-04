@@ -12,9 +12,9 @@ def app():
 
 @pytest.fixture(scope='function')
 def auth(app):
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     yield auth
-    app.logout()
+    app.session.logout()
 
 def test_add_group(app, auth):
     app.create_group(Group(name="Family users", header="Простое лого", footer="Подвал группы"))
