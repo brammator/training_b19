@@ -17,10 +17,10 @@ def auth(app):
     app.session.logout()
 
 def test_add_group(app, auth):
-    app.create_group(Group(name="Family users", header="Простое лого", footer="Подвал группы"))
+    app.group.create(Group(name="Family users", header="Простое лого", footer="Подвал группы"))
 
 def test_add_empty_group(app, auth):
-    app.create_group(Group(name="", header="", footer=""))
+    app.group.create(Group(name="", header="", footer=""))
 
 def test_add_contact(app, auth):
     app.create_contact(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
