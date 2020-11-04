@@ -16,7 +16,7 @@ class ContactHelper:
             else:
                 element.clear()
                 element.send_keys(value)
-        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        wd.find_element_by_name("submit").click()
         self.return_to_main_page()
 
     def return_to_main_page(self):
