@@ -19,6 +19,22 @@ class ContactHelper:
         wd.find_element_by_name("submit").click()
         self.return_to_main_page()
 
+    def delete_first(self):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_name("delete").click()
+        self.return_to_main_page()
+
+    def delete_all(self):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_name("massCB").click()
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
+
+
+
     def return_to_main_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
