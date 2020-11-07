@@ -16,20 +16,22 @@ def test_add_empty_contact(app, auth):
     app.contact.create(Contact())
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_delete_first_contact(app, auth):
     app.contact.create(Contact(firstname="Жертва", lastname="Удаляемая"))
     app.contact.delete_first()
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
+@pytest.mark.trylast
 def test_delete_all_contacts(app, auth):
     app.contact.create(Contact(firstname="Жертва 1", lastname="Удаляемая"))
     app.contact.create(Contact(firstname="Жертва 2", lastname="Удаляемая"))
     app.contact.delete_all()
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
+# @pytest.mark.parametrize("p", range(1, 40))
 def test_modify_contact(app, auth):
     app.contact.create(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
                                title="Cleanliness Director", company="Dixyorochka", address="SPb", home="+78005553535",
