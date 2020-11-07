@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
+from fixture.common import WebDriverHelper
 
 
-class GroupHelper:
-    def __init__(self, app):
-        self.app = app
+class GroupHelper(WebDriverHelper):
 
     def create(self, group):
         wd = self.app.wd
@@ -12,9 +11,7 @@ class GroupHelper:
         wd.find_element_by_name("new").click()
         # заполнить форму добавления группы
         for field, value in group.items():
-            element = wd.find_element_by_name(field)
-            element.clear()
-            element.send_keys(value)
+            self.fill_field(field, value)
         # сохранить изменения
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
