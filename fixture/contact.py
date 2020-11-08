@@ -71,6 +71,10 @@ class ContactHelper(WebDriverHelper):
         form.find_element_by_name("update").click()
         return modified_contact
 
+    def count(self):
+        self.app.open_home_page()
+        return len(self.app.wd.find_elements_by_name("selected[]"))
+
     def return_to_main_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
