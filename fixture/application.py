@@ -8,7 +8,7 @@ from fixture.session import SessionHelper
 
 class Application:
     def __init__(self):
-        self.DEFAULT_WAIT_TIME = 30
+        self.DEFAULT_WAIT_TIME = 10
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(self.DEFAULT_WAIT_TIME)
         self.session = SessionHelper(app=self)

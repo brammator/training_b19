@@ -3,7 +3,6 @@ from fixture.common import WebDriverHelper
 
 
 class GroupHelper(WebDriverHelper):
-
     def create(self, group):
         wd = self.app.wd
         self.open_groups_page()
@@ -48,6 +47,10 @@ class GroupHelper(WebDriverHelper):
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("group page").click()
         return modified_group
+
+    def count(self):
+        self.open_groups_page()
+        return len(self.app.wd.find_elements_by_name("selected[]"))
 
     def open_groups_page(self):
         wd = self.app.wd
