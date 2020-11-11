@@ -7,6 +7,8 @@ class WebDriverHelper:
         self.app = app
 
     def fill_field(self, field, value, scope=None):
+        if value is None:
+            return
         if scope is None:
             scope = self.app.wd
         e = scope.find_element_by_name(field)
@@ -20,3 +22,8 @@ class WebDriverHelper:
             e.send_keys(value)
         else:
             raise KeyError(f"Unsupported field: {e.tag_name} / {e.get_attribute('type')}")
+
+    def select_first(self):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]").click()
+

@@ -6,70 +6,59 @@ from fixture.common import WebDriverHelper
 
 class ContactHelper(WebDriverHelper):
 
-    def create(self, contact):
+    def add(self, contact):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
-        for field, value in contact.items():
-            self.fill_field(field, value)
+        self.fill_all(contact)
         wd.find_element_by_name("submit").click()
         self.return_to_main_page()
 
-    def delete_first(self):
+    def del_first(self):
         wd = self.app.wd
         self.app.open_home_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_first()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
-    def delete_all(self):
+    def del_all(self):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_element_by_id("MassCB").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
-    def modify_first(self):
+    def edit_first(self, contact):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
-        form = wd.find_element_by_css_selector("form[action='edit.php']")
-        modified_contact = form.find_element_by_name("id").get_attribute("value")
-        for i in form.find_elements_by_tag_name("input"):
-            if i.get_attribute("type") != "text":
-                continue
-            text = i.get_attribute("value")
-            if i.get_attribute("name").endswith("year") and len(text) == 0:
-                text = "1831"
-            if len(text) == 0:
-                i.send_keys(f"Отредактированный элемент {i.get_attribute('name')}")
-            elif text[::-1] == text:
-                i.send_keys(" (отредактировано)")
-            else:
-                i.clear()
-                i.send_keys(text[::-1])
-        for i in form.find_elements_by_tag_name("textarea"):
-            text = i.get_attribute("value")
-            if len(text) == 0:
-                i.send_keys(f"Отредактированный элемент {i.get_attribute('name')}")
-            elif text[::-1] == text:
-                i.send_keys(" (отредактировано)")
-            else:
-                i.clear()
-                i.send_keys(text[::-1])
-        for i in form.find_elements_by_tag_name("select"):
-            options = i.find_elements_by_tag_name("option")
-            for j, k in enumerate(options[1:], 1):
-                if k.get_attribute("value") == options[0].get_attribute("value"):
-                    # print(f"field {i.get_attribute('name')} has value #{j} {k.get_attribute('value')}, "
-                    #       f"setting #{j-1} {options[j-1].get_attribute('value')}")
-                    if j > 1:
-                        options[j - 1].click()
-                        break
-                    else:
-                        options[-1].click()
-                        break
-        form.find_element_by_name("update").click()
-        return modified_contact
+        self.fill_all(contact)
+        wd.find_element_by_name("update").click()
+
+    def fill_all(self, contact):
+        self.fill_field("firstname", contact.firstname)
+        self.fill_field("middlename", contact.middlename)
+        self.fill_field("lastname", contact.lastname)
+        self.fill_field("nickname", contact.nickname)
+        self.fill_field("title", contact.title)
+        self.fill_field("company", contact.company)
+        self.fill_field("address", contact.address)
+        self.fill_field("home", contact.home)
+        self.fill_field("mobile", contact.mobile)
+        self.fill_field("work", contact.work)
+        self.fill_field("fax", contact.fax)
+        self.fill_field("email", contact.email)
+        self.fill_field("email2", contact.email2)
+        self.fill_field("email3", contact.email3)
+        self.fill_field("homepage", contact.homepage)
+        self.fill_field("bday", contact.bday)
+        self.fill_field("bmonth", contact.bmonth)
+        self.fill_field("byear", contact.byear)
+        self.fill_field("aday", contact.aday)
+        self.fill_field("amonth", contact.amonth)
+        self.fill_field("ayear", contact.ayear)
+        self.fill_field("address2", contact.address2)
+        self.fill_field("phone2", contact.phone2)
+        self.fill_field("notes", contact.notes)
 
     def count(self):
         self.app.open_home_page()

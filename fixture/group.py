@@ -3,49 +3,45 @@ from fixture.common import WebDriverHelper
 
 
 class GroupHelper(WebDriverHelper):
-    def create(self, group):
+    def add(self, group):
         wd = self.app.wd
         self.open_groups_page()
         # добавить новую группу
         wd.find_element_by_name("new").click()
         # заполнить форму добавления группы
-        for field, value in group.items():
-            self.fill_field(field, value)
+        self.fill_all(group)
         # сохранить изменения
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
 
-    def delete_first(self):
+    def fill_all(self, group):
+        self.fill_field("group_name", group.name)
+        self.fill_field("group_header", group.header)
+        self.fill_field("group_footer", group.footer)
+
+    def del_first(self):
         wd = self.app.wd
         self.open_groups_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_first()
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
 
-    def delete_all(self):
+    def del_all(self):
         wd = self.app.wd
         self.open_groups_page()
         list(map(lambda x: x.click(), wd.find_elements_by_name("selected[]")))
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
 
-    def modify_first(self):
+    def edit_first(self, group):
         wd = self.app.wd
         self.open_groups_page()
-        wd.find_element_by_name("selected[]").click()
+        self.select_first()
         wd.find_element_by_name("edit").click()
         modified_group = wd.find_element_by_name("id").get_attribute("value")
-        for i in wd.find_elements_by_css_selector("div#content>form>[name^='group_']"):
-            text = i.get_attribute("value")
-            if len(text) == 0:
-                i.send_keys(f"Отредактированный элемент {i.get_attribute('name')}")
-            elif text[::-1] == text:
-                i.send_keys(" (отредактировано)")
-            else:
-                i.clear()
-                i.send_keys(text[::-1])
+        self.fill_all(group)
         wd.find_element_by_name("update").click()
-        wd.find_element_by_link_text("group page").click()
+        self.return_to_groups_page()
         return modified_group
 
     def count(self):
@@ -54,9 +50,10 @@ class GroupHelper(WebDriverHelper):
 
     def open_groups_page(self):
         wd = self.app.wd
+        if wd.current_url.endswith("/group.php") and len(wd.find_elements_by_name("new")) > 0:
+            return
         wd.find_element_by_link_text("groups").click()
 
     def return_to_groups_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("group page").click()
-

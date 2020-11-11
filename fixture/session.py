@@ -27,7 +27,6 @@ class SessionHelper(WebDriverHelper):
         else:
             pass  # (user, current == None) || (user == current)
 
-
     @property
     def logged_username(self):
         wd = self.app.wd
