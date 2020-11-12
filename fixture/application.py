@@ -19,7 +19,10 @@ class Application:
         self.wd.quit()
 
     def open_home_page(self):
-        self.wd.get("http://localhost/addressbook/")
+        wd = self.wd
+        if not (wd.current_url.endswith("/addressbook/") and
+                len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
+            wd.get("http://localhost/addressbook/")
 
     def is_valid(self):
         try:
