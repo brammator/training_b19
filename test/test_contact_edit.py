@@ -11,11 +11,16 @@ def test_contact_edit(app):
                                 homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816",
                                 aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
                                 notes="What are you, Oleg"))
+    old_contacts = app.contact.list()
     person = Contact(firstname="Иван", middlename="Васильевич", lastname="Первый", nickname="Синий",
                                 title="Директор по чистоте", company="Диксёрочка", address="Питер",
                                 home="88005553535", mobile="+7-800-555-3535", work="+7 (800) 555 3535",
                                 fax="восемь 800 555 35 35", email="mlem@newchannel.meme",
                                 homepage="http://localhost/addressbook", bday="21", bmonth="December", byear="1711",
                                 aday="18", amonth="March", ayear="1531", address2="Мск", phone2="то же самое",
-                                notes="Ох, Олег, что ты такое?")
-    modified_contact = app.contact.edit_first(person)
+                                notes="Ох, Олег, что ты такое?", id=old_contacts[0].id)
+    app.contact.edit_first(person)
+    new_contacts = app.contact.list()
+    assert len(old_contacts) == len(new_contacts)
+    old_contacts[0] = person
+    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)

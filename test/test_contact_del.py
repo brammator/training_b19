@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
+import pytest
 
 
+# @pytest.mark.skip
 def test_contact_del_first(app):
     if app.contact.count() == 0:
         app.contact.add(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
@@ -11,9 +13,15 @@ def test_contact_del_first(app):
                                 homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816",
                                 aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
                                 notes="What are you, Oleg"))
+    old_contacts = app.contact.list()
     app.contact.del_first()
+    new_contacts = app.contact.list()
+    assert len(old_contacts) - 1 == len(new_contacts)
+    old_contacts[0:1] = []
+    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
 
+# @pytest.mark.skip
 def test_contact_del_all(app):
     if app.contact.count() == 0:
         app.contact.add(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
@@ -23,4 +31,7 @@ def test_contact_del_all(app):
                                 homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816",
                                 aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
                                 notes="What are you, Oleg"))
+    # old_contacts = app.contact.list()
     app.contact.del_all()
+    new_contacts = app.contact.list()
+    assert 0 == len(new_contacts)

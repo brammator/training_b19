@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from fixture.common import WebDriverHelper
+from model.contact import Contact
 
 
 class ContactHelper(WebDriverHelper):
@@ -17,6 +18,8 @@ class ContactHelper(WebDriverHelper):
         self.select_first()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+        wd.find_element_by_css_selector("div#content > div.msgbox")
+        self.app.open_home_page()
 
     def del_all(self):
         wd = self.app.wd
@@ -24,6 +27,8 @@ class ContactHelper(WebDriverHelper):
         wd.find_element_by_id("MassCB").click()
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+        wd.find_element_by_css_selector("div#content > div.msgbox")
+        self.app.open_home_page()
 
     def edit_first(self, contact):
         wd = self.app.wd
@@ -61,6 +66,19 @@ class ContactHelper(WebDriverHelper):
     def count(self):
         self.app.open_home_page()
         return len(self.app.wd.find_elements_by_name("selected[]"))
+
+    def list(self):
+        wd = self.app.wd
+        self.app.open_home_page()
+        return list(map(lambda e: Contact(id=e[0], firstname=e[1], lastname=e[2]),
+                        zip(
+                            map(lambda e: e.get_attribute("value"),
+                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(1) > input")),
+                            map(lambda e: getattr(e, "text"),
+                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(3)")),
+                            map(lambda e: getattr(e, "text"),
+                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(2)")),
+                        )))
 
     def return_to_main_page(self):
         wd = self.app.wd

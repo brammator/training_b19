@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from fixture.common import WebDriverHelper
+from model.group import Group
 
 
 class GroupHelper(WebDriverHelper):
@@ -47,6 +48,16 @@ class GroupHelper(WebDriverHelper):
     def count(self):
         self.open_groups_page()
         return len(self.app.wd.find_elements_by_name("selected[]"))
+
+    def list(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        groups = []
+        for element in wd.find_elements_by_css_selector("span.group"):
+            text = element.text
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            groups.append(Group(name=text, id=id))
+        return groups
 
     def open_groups_page(self):
         wd = self.app.wd
