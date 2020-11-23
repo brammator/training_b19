@@ -11,6 +11,7 @@ class ContactHelper(WebDriverHelper):
         self.fill_all(contact)
         wd.find_element_by_name("submit").click()
         self.return_to_main_page()
+        self.cache = None
 
     def del_first(self):
         wd = self.app.wd
@@ -20,6 +21,7 @@ class ContactHelper(WebDriverHelper):
         wd.switch_to_alert().accept()
         wd.find_element_by_css_selector("div#content > div.msgbox")
         self.app.open_home_page()
+        self.cache = None
 
     def del_all(self):
         wd = self.app.wd
@@ -29,6 +31,7 @@ class ContactHelper(WebDriverHelper):
         wd.switch_to_alert().accept()
         wd.find_element_by_css_selector("div#content > div.msgbox")
         self.app.open_home_page()
+        self.cache = None
 
     def edit_first(self, contact):
         wd = self.app.wd
@@ -36,6 +39,7 @@ class ContactHelper(WebDriverHelper):
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.fill_all(contact)
         wd.find_element_by_name("update").click()
+        self.cache = None
 
     def fill_all(self, contact):
         self.fill_field("firstname", contact.firstname)
@@ -68,17 +72,19 @@ class ContactHelper(WebDriverHelper):
         return len(self.app.wd.find_elements_by_name("selected[]"))
 
     def list(self):
-        wd = self.app.wd
-        self.app.open_home_page()
-        return list(map(lambda e: Contact(id=e[0], firstname=e[1], lastname=e[2]),
-                        zip(
-                            map(lambda e: e.get_attribute("value"),
-                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(1) > input")),
-                            map(lambda e: getattr(e, "text"),
-                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(3)")),
-                            map(lambda e: getattr(e, "text"),
-                                wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(2)")),
-                        )))
+        if self.cache is None:
+            wd = self.app.wd
+            self.app.open_home_page()
+            self.cache = list(map(lambda e: Contact(id=e[0], firstname=e[1], lastname=e[2]),
+                                zip(
+                                    map(lambda e: e.get_attribute("value"),
+                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(1) > input")),
+                                    map(lambda e: getattr(e, "text"),
+                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(3)")),
+                                    map(lambda e: getattr(e, "text"),
+                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(2)")),
+                                )))
+        return self.cache
 
     def return_to_main_page(self):
         wd = self.app.wd

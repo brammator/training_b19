@@ -14,6 +14,7 @@ class GroupHelper(WebDriverHelper):
         # сохранить изменения
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
+        self.cache = None
 
     def fill_all(self, group):
         self.fill_field("group_name", group.name)
@@ -26,6 +27,7 @@ class GroupHelper(WebDriverHelper):
         self.select_first()
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
+        self.cache = None
 
     def del_all(self):
         wd = self.app.wd
@@ -33,6 +35,7 @@ class GroupHelper(WebDriverHelper):
         list(map(lambda x: x.click(), wd.find_elements_by_name("selected[]")))
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
+        self.cache = None
 
     def edit_first(self, group):
         wd = self.app.wd
@@ -43,6 +46,7 @@ class GroupHelper(WebDriverHelper):
         self.fill_all(group)
         wd.find_element_by_name("update").click()
         self.return_to_groups_page()
+        self.cache = None
         return modified_group
 
     def count(self):
@@ -50,14 +54,15 @@ class GroupHelper(WebDriverHelper):
         return len(self.app.wd.find_elements_by_name("selected[]"))
 
     def list(self):
-        wd = self.app.wd
-        self.open_groups_page()
-        groups = []
-        for element in wd.find_elements_by_css_selector("span.group"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            groups.append(Group(name=text, id=id))
-        return groups
+        if self.cache is None:
+            wd = self.app.wd
+            self.open_groups_page()
+            self.cache = []
+            for element in wd.find_elements_by_css_selector("span.group"):
+                text = element.text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                self.cache.append(Group(name=text, id=id))
+        return self.cache
 
     def open_groups_page(self):
         wd = self.app.wd

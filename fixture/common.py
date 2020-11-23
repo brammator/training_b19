@@ -5,6 +5,7 @@ from selenium.webdriver.support.select import Select
 class WebDriverHelper:
     def __init__(self, app):
         self.app = app
+        self.cache = None
 
     def fill_field(self, field, value, scope=None):
         if value is None:
