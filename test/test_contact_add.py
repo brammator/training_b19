@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
+import pytest
+
 from model.contact import Contact
 
 
-def test_contact_add(app):
-    person = Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
+# @pytest.mark.parametrize("x", range(10))
+def test_contact_add(app, x):
+    person = Contact(firstname=f"John {x}", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
                      title="Cleanliness Director", company="Dixyorochka", address="SPb", home="+78005553535",
                      mobile="8-800-555-3535", work="8 (800) 555 3535", fax="8 800 555 35 35",
                      email="cdur@oldfiction.book", homepage="localhost/addressbook", bday="1", bmonth="February",

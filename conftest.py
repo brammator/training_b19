@@ -24,3 +24,9 @@ def stop(request):
         fixture.destroy()
     request.addfinalizer(fin)
     return fixture
+
+
+@pytest.fixture
+def x():
+    "пустая фикстура, чтобы закомментированная параметризация не ломала ран"
+    return 0

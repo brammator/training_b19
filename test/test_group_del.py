@@ -1,17 +1,21 @@
 # -*- coding: utf-8 -*-
+from random import randrange
+
 from model.group import Group
 import pytest
 
 
 # @pytest.mark.skip
-def test_group_del_first(app):
+# @pytest.mark.parametrize("x", range(10))
+def test_group_del_random(app, x):
     if app.group.count() == 0:
         app.group.add(Group(name="Группа для удаления"))
     old_groups = app.group.list()
-    app.group.del_first()
+    index = randrange(len(old_groups))
+    app.group.del_nth(index)
     new_groups = app.group.list()
     assert len(old_groups) - 1 == len(new_groups)
-    old_groups[0:1] = []
+    old_groups[index:index+1] = []
     assert old_groups == new_groups
 
 

@@ -22,9 +22,12 @@ class GroupHelper(WebDriverHelper):
         self.fill_field("group_footer", group.footer)
 
     def del_first(self):
+        self.del_nth(0)
+
+    def del_nth(self, index):
         wd = self.app.wd
         self.open_groups_page()
-        self.select_first()
+        self.select_nth(index)
         wd.find_element_by_name("delete").click()
         self.return_to_groups_page()
         self.cache = None
@@ -38,9 +41,12 @@ class GroupHelper(WebDriverHelper):
         self.cache = None
 
     def edit_first(self, group):
+        self.edit_nth(0, group)
+
+    def edit_nth(self, index, group):
         wd = self.app.wd
         self.open_groups_page()
-        self.select_first()
+        self.select_nth(index)
         wd.find_element_by_name("edit").click()
         modified_group = wd.find_element_by_name("id").get_attribute("value")
         self.fill_all(group)

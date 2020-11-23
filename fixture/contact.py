@@ -14,9 +14,12 @@ class ContactHelper(WebDriverHelper):
         self.cache = None
 
     def del_first(self):
+        self.del_nth(0)
+
+    def del_nth(self, index):
         wd = self.app.wd
         self.app.open_home_page()
-        self.select_first()
+        self.select_nth(index)
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
         wd.find_element_by_css_selector("div#content > div.msgbox")
@@ -34,9 +37,12 @@ class ContactHelper(WebDriverHelper):
         self.cache = None
 
     def edit_first(self, contact):
+        self.edit_nth(0, contact)
+
+    def edit_nth(self, index, contact):
         wd = self.app.wd
         self.app.open_home_page()
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         self.fill_all(contact)
         wd.find_element_by_name("update").click()
         self.cache = None

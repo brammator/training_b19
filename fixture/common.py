@@ -25,6 +25,9 @@ class WebDriverHelper:
             raise KeyError(f"Unsupported field: {e.tag_name} / {e.get_attribute('type')}")
 
     def select_first(self):
+        self.select_nth(0)
+
+    def select_nth(self, index):
         wd = self.app.wd
-        wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
 

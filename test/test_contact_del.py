@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+from random import randrange
+
 from model.contact import Contact
 import pytest
 
 
 # @pytest.mark.skip
-def test_contact_del_first(app):
+# @pytest.mark.parametrize("x", range(10))
+def test_contact_del_nth(app, x):
     if app.contact.count() == 0:
         app.contact.add(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
                                 title="Cleanliness Director", company="Dixyorochka", address="SPb",
@@ -14,10 +17,11 @@ def test_contact_del_first(app):
                                 aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
                                 notes="What are you, Oleg"))
     old_contacts = app.contact.list()
-    app.contact.del_first()
+    index = randrange(len(old_contacts))
+    app.contact.del_nth(index)
     new_contacts = app.contact.list()
     assert len(old_contacts) - 1 == len(new_contacts)
-    old_contacts[0:1] = []
+    old_contacts[index:index+1] = []
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
 
