@@ -81,19 +81,49 @@ class ContactHelper(WebDriverHelper):
         if self.cache is None:
             wd = self.app.wd
             self.app.open_home_page()
-            self.cache = list(map(lambda e: Contact(id=e[0], firstname=e[1], lastname=e[2]),
-                                zip(
-                                    map(lambda e: e.get_attribute("value"),
-                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(1) > input")),
-                                    map(lambda e: getattr(e, "text"),
-                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(3)")),
-                                    map(lambda e: getattr(e, "text"),
-                                        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(2)")),
-                                )))
+            self.cache = list(map(lambda l: Contact(id=l[0], firstname=l[1], lastname=l[2], phones=l[3], emails=l[4],
+                                                    address=l[5]),
+                                  zip(
+                                      map(lambda e: e.get_attribute("value"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(1) > input")),
+                                      map(lambda e: getattr(e, "text"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(3)")),
+                                      map(lambda e: getattr(e, "text"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(2)")),
+                                      map(lambda e: getattr(e, "text"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(6)")),
+                                      map(lambda e: getattr(e, "text"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(5)")),
+                                      map(lambda e: getattr(e, "text"),
+                                          wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(4)")),
+                                  )))
         return self.cache
+
+    def get_contact_info_from_edit_page(self, index):
+        wd = self.app.wd
+        self.open_edit_nth(index)
+        return Contact(**{f: wd.find_element_by_name(f).get_attribute("value") for f in
+                          ("firstname", "lastname", "id", "home", "mobile", "work", "phone2", "address",
+                           "email", "email2",  "email3")})
+
+    def get_contact_info_from_view_page(self, index):
+        wd = self.app.wd
+        self.open_view_nth(index)
+        content = wd.find_elements_by_css_selector("div#content").text
 
     def return_to_main_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and
-                len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
+                len(wd.find_elements_by_xpath("//input[@value='Send l-Mail']")) > 0):
             wd.find_element_by_link_text("home page").click()
+
+    def open_edit_nth(self, index):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(8) > a")[index].click()
+
+    def open_view_nth(self, index):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_elements_by_css_selector("tr[name=entry] > td:nth-child(7) > a")[index].click()
+

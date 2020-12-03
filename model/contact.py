@@ -3,10 +3,15 @@ from sys import maxsize
 
 
 class Contact:
+    PHONE_FIELDS = ("home", "mobile", "work", "phone2")
+    EMAIL_FIELDS = ("email", "email2", "email3")
+
     def __init__(self, firstname=None, middlename=None, lastname=None, nickname=None, title=None, company=None,
                  address=None, home=None, mobile=None, work=None, fax=None, email=None, email2=None, email3=None,
                  homepage=None, bday=None, bmonth=None, byear=None, aday=None, amonth=None, ayear=None, address2=None,
-                 phone2=None, notes=None, id=None):
+                 phone2=None, notes=None, id=None, emails=None, phones=None):
+        self.phones = phones
+        self.emails = emails
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname
