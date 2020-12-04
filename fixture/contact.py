@@ -109,7 +109,7 @@ class ContactHelper(WebDriverHelper):
     def get_contact_info_from_view_page(self, index):
         wd = self.app.wd
         self.open_view_nth(index)
-        content = wd.find_elements_by_css_selector("div#content").text
+        content = wd.find_element_by_css_selector("div#content").text
 
     def return_to_main_page(self):
         wd = self.app.wd

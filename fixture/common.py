@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import random
+import string
+
 from selenium.webdriver.support.select import Select
 
 
@@ -31,3 +34,7 @@ class WebDriverHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+
+def random_string(prefix, maxlen):
+    symbols = string.ascii_letters + string.digits + string.punctuation + " "*10
+    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])

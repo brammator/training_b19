@@ -5,7 +5,6 @@ from random import randrange
 
 from model.contact import Contact
 
-
 # @pytest.mark.skip
 def test_info_on_home_page(app, x):
     if app.contact.count() == 0:
@@ -27,7 +26,7 @@ def test_info_on_home_page(app, x):
     assert contact_home.emails == merge_emails_like_on_home_page(contact_edit)
 
 
-# @pytest.mark.skip
+@pytest.mark.skip
 def test_phones_on_contact_view_page(app, x):
     contact_view = app.contact.get_contact_info_from_view_page(0)
     contact_edit = app.contact.get_contact_info_from_edit_page(0)
