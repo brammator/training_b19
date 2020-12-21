@@ -28,7 +28,7 @@ class ORMFixture:
         deprecated = Optional(datetime, column='deprecated')
         groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts",
                      lazy=True)
-        address = Optional(str, column='address')
+       address = Optional(str, column='address')
         home = Optional(str, column='home')
         mobile = Optional(str, column='mobile')
         work = Optional(str, column='work')
