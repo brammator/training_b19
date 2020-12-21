@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from selenium.webdriver.support.select import Select
+
 from fixture.common import WebDriverHelper
 from model.contact import Contact
 
@@ -64,6 +66,26 @@ class ContactHelper(WebDriverHelper):
         self.fill_all(contact)
         wd.find_element_by_name("update").click()
         self.cache = None
+
+    def add_to_group(self, contact, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_byid(contact.id)
+        Select(wd.find_element_by_name("to_group")).select_by_value(group.id)
+        wd.find_element_by_name("add").click()
+        wd.find_element_by_css_selector(f"a[href='./?group={group.id}']").click()
+        self.cache = None
+
+    def del_from_group(self, contact, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        Select(wd.find_element_by_name("group")).select_by_value(group.id)
+        wd.find_element_by_name("remove")
+        self.select_byid(contact.id)
+        wd.find_element_by_name("remove").click()
+        wd.find_element_by_css_selector(f"a[href='./?group={group.id}']").click()
+        self.cache = None
+
 
     def fill_all(self, contact):
         self.fill_field("firstname", contact.firstname)
