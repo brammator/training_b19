@@ -4,11 +4,11 @@ from datetime import datetime
 
 from pony.orm import Database, PrimaryKey, Optional, Set, sql_debug, db_session, select
 
-from model.group import Group
 from model.contact import Contact
+from model.group import Group
+
 
 class ORMFixture:
-
     db = Database()
 
     class ORMGroup(db.Entity):
@@ -17,7 +17,8 @@ class ORMFixture:
         name = Optional(str, column='group_name')
         header = Optional(str, column='group_header')
         footer = Optional(str, column='group_footer')
-        contacts = Set(lambda: ORMFixture.ORMContact, table="address_in_groups", column="id", reverse="groups", lazy=True)
+        contacts = Set(lambda: ORMFixture.ORMContact, table="address_in_groups", column="id", reverse="groups",
+                       lazy=True)
 
     class ORMContact(db.Entity):
         _table_ = 'addressbook'
@@ -25,7 +26,16 @@ class ORMFixture:
         firstname = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
         deprecated = Optional(datetime, column='deprecated')
-        groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts", lazy=True)
+        groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts",
+                     lazy=True)
+        address = Optional(str, column='address')
+        home = Optional(str, column='home')
+        mobile = Optional(str, column='mobile')
+        work = Optional(str, column='work')
+        phone2 = Optional(str, column='phone2')
+        email = Optional(str, column='email')
+        email2 = Optional(str, column='email2')
+        email3 = Optional(str, column='email3')
 
     def __init__(self, host, database, user, password):
         self.db.bind('mysql', host=host, database=database, user=user, password=password, autocommit=True)
@@ -35,6 +45,7 @@ class ORMFixture:
     def convert_groups_to_model(self, groups):
         def convert(group):
             return Group(id=str(group.id), name=group.name, header=group.header, footer=group.footer)
+
         return list(map(convert, groups))
 
     @db_session
@@ -43,12 +54,20 @@ class ORMFixture:
 
     def convert_contacts_to_model(self, contacts):
         def convert(contact):
-            return Contact(id=str(contact.id), firstname=contact.firstname, lastname=contact.lastname)
+            # return Contact(id=str(contact.id), firstname=contact.firstname, lastname=contact.lastname)
+            return Contact(**{k: str(getattr(contact, k)) for k in
+                              ("id", "firstname", "lastname", "address") + Contact.PHONE_FIELDS + Contact.EMAIL_FIELDS})
         return list(map(convert, contacts))
 
     @db_session
     def get_contact_list(self):
         return self.convert_contacts_to_model(select(c for c in ORMFixture.ORMContact if c.deprecated is None))
+
+    @db_session
+    def get_contact_dict(self):
+        contactlist = self.convert_contacts_to_model(select(c for c in ORMFixture.ORMContact if c.deprecated is None))
+        contactdict = {c.id: c for c in contactlist}
+        return contactdict
 
     @db_session
     def get_contacts_in_group(self, group):
