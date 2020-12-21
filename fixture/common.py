@@ -34,6 +34,10 @@ class WebDriverHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def select_byid(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector(f"input[value='{id}']").click()
+
 
 def random_string(prefix, maxlen):
     symbols = string.ascii_letters + string.digits + string.punctuation + " "*10

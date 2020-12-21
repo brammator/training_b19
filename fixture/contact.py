@@ -26,6 +26,16 @@ class ContactHelper(WebDriverHelper):
         self.app.open_home_page()
         self.cache = None
 
+    def del_byid(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_byid(id)
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        wd.find_element_by_css_selector("div#content > div.msgbox")
+        self.app.open_home_page()
+        self.cache = None
+
     def del_all(self):
         wd = self.app.wd
         self.app.open_home_page()
@@ -43,6 +53,14 @@ class ContactHelper(WebDriverHelper):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+        self.fill_all(contact)
+        wd.find_element_by_name("update").click()
+        self.cache = None
+
+    def edit_byid(self, id, contact):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_css_selector(f"a[href='edit.php?id={id}']").click()
         self.fill_all(contact)
         wd.find_element_by_name("update").click()
         self.cache = None

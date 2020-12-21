@@ -32,6 +32,14 @@ class GroupHelper(WebDriverHelper):
         self.return_to_groups_page()
         self.cache = None
 
+    def del_byid(self, id):
+        wd = self.app.wd
+        self.open_groups_page()
+        self.select_byid(id)
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
+        self.cache = None
+
     def del_all(self):
         wd = self.app.wd
         self.open_groups_page()
@@ -54,6 +62,16 @@ class GroupHelper(WebDriverHelper):
         self.return_to_groups_page()
         self.cache = None
         return modified_group
+
+    def edit_byid(self, id, group):
+        wd = self.app.wd
+        self.open_groups_page()
+        self.select_byid(id)
+        wd.find_element_by_name("edit").click()
+        self.fill_all(group)
+        wd.find_element_by_name("update").click()
+        self.return_to_groups_page()
+        self.cache = None
 
     def count(self):
         self.open_groups_page()

@@ -7,9 +7,19 @@ import jsonpickle
 import pytest
 
 from fixture.application import Application
+from fixture.orm import ORMFixture
 
 fixture = None
 target = None
+
+
+def load_config(file):
+    global target
+    if target is None:
+        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
+        with open(config_file, "r", encoding="utf-8") as fp:
+            target = json.load(fp)
+    return target
 
 
 @pytest.fixture
@@ -18,17 +28,21 @@ def app(request):
     global target
 
     browser = request.config.getoption("--browser")
-    if target is None:
-        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--target"))
-        with open(config_file, "r", encoding="utf-8") as fp:
-            target = json.load(fp)
+    web_config = load_config(request.config.getoption("--target"))['web']
     if fixture is None:
-        fixture = Application(browser=browser, base_url=target['base_url'])
+        fixture = Application(browser=browser, base_url=web_config['base_url'])
     else:
         if not fixture.is_valid():
-            fixture = Application(browser=browser, base_url=target['base_url'])
-    fixture.session.ensure_logged(username=target["username"], password=target["password"])
+            fixture = Application(browser=browser, base_url=web_config['base_url'])
+    fixture.session.ensure_logged(username=web_config["username"], password=web_config["password"])
     return fixture
+
+
+@pytest.fixture(scope="session")
+def db(request):
+    db_config = load_config(request.config.getoption("--target"))["db"]
+    dbfixture = ORMFixture(host=db_config["host"], database=db_config["database"], user=db_config["user"], password=db_config["password"])
+    return dbfixture
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -41,9 +55,15 @@ def stop(request):
     return fixture
 
 
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption("--check_ui")
+
+
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome")
     parser.addoption("--target", action="store", default="target.json")
+    parser.addoption("--check_ui", action="store_true")
 
 
 def pytest_generate_tests(metafunc):
