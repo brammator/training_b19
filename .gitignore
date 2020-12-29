@@ -130,4 +130,4 @@ dmypy.json
 
 # local data
 /regexp.txt
-/data/*.json
+#/data/*.json

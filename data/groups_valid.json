@@ -1,0 +1,44 @@
+[
+  {
+    "py/object": "model.group.Group",
+    "name": "",
+    "header": "",
+    "footer": "",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "name 1",
+    "header": "header 1",
+    "footer": "footer 1",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "name 2",
+    "header": "header 2",
+    "footer": "footer 2",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "name 3",
+    "header": "header 3",
+    "footer": "footer 3",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "name 4",
+    "header": "header 4",
+    "footer": "footer 4",
+    "id": null
+  },
+  {
+    "py/object": "model.group.Group",
+    "name": "name 5",
+    "header": "header 5",
+    "footer": "footer 5",
+    "id": null
+  }
+]
