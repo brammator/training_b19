@@ -86,7 +86,6 @@ class ContactHelper(WebDriverHelper):
         wd.find_element_by_css_selector(f"a[href='./?group={group.id}']").click()
         self.cache = None
 
-
     def fill_all(self, contact):
         self.fill_field("firstname", contact.firstname)
         self.fill_field("middlename", contact.middlename)
