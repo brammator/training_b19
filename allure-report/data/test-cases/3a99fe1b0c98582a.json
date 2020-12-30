@@ -1,0 +1,116 @@
+{
+  "uid" : "3a99fe1b0c98582a",
+  "name" : "test_contact_add[Contact(None: {})]",
+  "fullName" : "test.test_contact_add.test_contact_add[Contact(None: {})]",
+  "historyId" : "f42c8f26407a070f9ad1807178abac79",
+  "time" : {
+    "start" : 1609286089461,
+    "stop" : 1609286110894,
+    "duration" : 21433
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1609286104167,
+        "stop" : 1609286104172,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the contact Contact(None: {}) to the list",
+      "time" : {
+        "start" : 1609286104172,
+        "stop" : 1609286110890,
+        "duration" : 6718
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new contact list is equal to the old list with the added contact",
+      "time" : {
+        "start" : 1609286110890,
+        "stop" : 1609286110894,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_contact_add[Contact(None: {})]"
+  }, {
+    "name" : "package",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3a99fe1b0c98582a.json",
+  "parameterValues" : [ ]
+}

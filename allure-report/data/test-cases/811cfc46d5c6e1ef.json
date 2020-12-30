@@ -1,0 +1,116 @@
+{
+  "uid" : "811cfc46d5c6e1ef",
+  "name" : "test_info_on_home_page",
+  "fullName" : "test.test_phones.test_info_on_home_page",
+  "historyId" : "5a618a579778fb6317ee2d9772e59f2f",
+  "time" : {
+    "start" : 1609286310306,
+    "stop" : 1609286312530,
+    "duration" : 2224
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a non-empty contact list",
+      "time" : {
+        "start" : 1609286310331,
+        "stop" : 1609286312529,
+        "duration" : 2198
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then properties of contacts on home page and in db are conform",
+      "time" : {
+        "start" : 1609286312529,
+        "stop" : 1609286312530,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Properties for Contact(340: {'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) and Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) are conform",
+        "time" : {
+          "start" : 1609286312530,
+          "stop" : 1609286312530,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_info_on_home_page"
+  }, {
+    "name" : "package",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "811cfc46d5c6e1ef.json",
+  "parameterValues" : [ ]
+}

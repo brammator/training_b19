@@ -1,0 +1,125 @@
+{
+  "uid" : "c554eadc096c0072",
+  "name" : "test_contact_add[Contact(None: {'home': 'home_4 dN  3..J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._> ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y>])TV fdPP+!.', 'nickname': 'nickname_4 i=O|q) )h   ~\"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})]",
+  "fullName" : "test.test_contact_add.test_contact_add[Contact(None: {'home': 'home_4 dN  3..J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._> ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y>])TV fdPP+!.', 'nickname': 'nickname_4 i=O|q) )h   ~\"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})]",
+  "historyId" : "c393733c11842574f8460a56cc70cc89",
+  "time" : {
+    "start" : 1609286139290,
+    "stop" : 1609286146347,
+    "duration" : 7057
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\n  Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\n  Use -v to get the full diff",
+  "statusTrace" : "app = <fixture.application.Application object at 0x0000021CF7658E88>, db = <fixture.orm.ORMFixture object at 0x0000021CF7615588>, x = 0\njson_contacts = Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"}), check_ui = False\n\n    def test_contact_add(app, db, x, json_contacts, check_ui):\n        person = json_contacts\n        with pytest.allure.step(\"Given a contact list\"):\n            old_contacts = db.get_contact_list()\n        with pytest.allure.step(f\"When I add the contact {person} to the list\"):\n            app.contact.add(person)\n        with pytest.allure.step(\"Then the new contact list is equal to the old list with the added contact\"):\n            new_contacts = db.get_contact_list()\n            old_contacts.append(person)\n>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\nE           assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\nE             Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\nE             Use -v to get the full diff\n\ntest\\test_contact_add.py:17: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\n  Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\n  Use -v to get the full diff",
+    "statusTrace" : "app = <fixture.application.Application object at 0x0000021CF7658E88>, db = <fixture.orm.ORMFixture object at 0x0000021CF7615588>, x = 0\njson_contacts = Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"}), check_ui = False\n\n    def test_contact_add(app, db, x, json_contacts, check_ui):\n        person = json_contacts\n        with pytest.allure.step(\"Given a contact list\"):\n            old_contacts = db.get_contact_list()\n        with pytest.allure.step(f\"When I add the contact {person} to the list\"):\n            app.contact.add(person)\n        with pytest.allure.step(\"Then the new contact list is equal to the old list with the added contact\"):\n            new_contacts = db.get_contact_list()\n            old_contacts.append(person)\n>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\nE           assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\nE             Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\nE             Use -v to get the full diff\n\ntest\\test_contact_add.py:17: AssertionError",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1609286139322,
+        "stop" : 1609286139324,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the contact Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._> ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y>])TV fdPP+!/', 'nickname': 'nickname_4 i=O|q) )h   ~\"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"}) to the list",
+      "time" : {
+        "start" : 1609286139324,
+        "stop" : 1609286146340,
+        "duration" : 7016
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new contact list is equal to the old list with the added contact",
+      "time" : {
+        "start" : 1609286146340,
+        "stop" : 1609286146344,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "app = <fixture.application.Application object at 0x0000021CF7658E88>, db = <fixture.orm.ORMFixture object at 0x0000021CF7615588>, x = 0\njson_contacts = Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"}), check_ui = False\n\n    def test_contact_add(app, db, x, json_contacts, check_ui):\n        person = json_contacts\n        with pytest.allure.step(\"Given a contact list\"):\n            old_contacts = db.get_contact_list()\n        with pytest.allure.step(f\"When I add the contact {person} to the list\"):\n            app.contact.add(person)\n        with pytest.allure.step(\"Then the new contact list is equal to the old list with the added contact\"):\n            new_contacts = db.get_contact_list()\n            old_contacts.append(person)\n>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\nE           assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\nE             Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\nE             Use -v to get the full diff\n\ntest\\test_contact_add.py:17: AssertionError",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_contact_add[Contact(None: {'home': 'home_4 dN  3..J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._> ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y>])TV fdPP+!.', 'nickname': 'nickname_4 i=O|q) )h   ~\"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})]"
+  }, {
+    "name" : "package",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "c554eadc096c0072.json",
+  "parameterValues" : [ ]
+}

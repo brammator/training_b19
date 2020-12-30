@@ -1,0 +1,146 @@
+{
+  "uid" : "746880e6c433d680",
+  "name" : "test_contact_group_del",
+  "fullName" : "test.test_contact_group.test_contact_group_del",
+  "historyId" : "bb51f65ba9aac3d6b890cc4a2f136717",
+  "time" : {
+    "start" : 1609286180588,
+    "stop" : 1609286196324,
+    "duration" : 15736
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given random group",
+      "time" : {
+        "start" : 1609286180608,
+        "stop" : 1609286180613,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Given random contact in group Group(309:name 3;header 3;footer 3)",
+      "time" : {
+        "start" : 1609286180613,
+        "stop" : 1609286187454,
+        "duration" : 6841
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Given list of contacts in group Group(309:name 3;header 3;footer 3)",
+      "time" : {
+        "start" : 1609286187454,
+        "stop" : 1609286187456,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I remove contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) from group Group(309:name 3;header 3;footer 3)",
+      "time" : {
+        "start" : 1609286187456,
+        "stop" : 1609286196323,
+        "duration" : 8867
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new list of contacts in group Group(309:name 3;header 3;footer 3) is equal to the old list minus contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) added",
+      "time" : {
+        "start" : 1609286196323,
+        "stop" : 1609286196324,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_contact_group"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_contact_group"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_contact_group_del"
+  }, {
+    "name" : "package",
+    "value" : "test.test_contact_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "746880e6c433d680.json",
+  "parameterValues" : [ ]
+}

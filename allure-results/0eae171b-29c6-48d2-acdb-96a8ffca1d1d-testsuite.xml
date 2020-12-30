@@ -1,0 +1,92 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286173634" stop="1609286196324">
+  <name>test.test_contact_group</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286173634" status="passed" stop="1609286180588">
+      <name>test_contact_group_add</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286173658" status="passed" stop="1609286173666">
+          <name>Given random group</name>
+          <title>Given random group</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286173666" status="passed" stop="1609286173672">
+          <name>Given random contact not in group Group(300:name 4;header 4;footer 4)</name>
+          <title>Given random contact not in group Group(300:name 4;header 4;footer 4)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286173672" status="passed" stop="1609286173673">
+          <name>Given list of contacts in group Group(300:name 4;header 4;footer 4)</name>
+          <title>Given list of contacts in group Group(300:name 4;header 4;footer 4)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286173673" status="passed" stop="1609286180585">
+          <name>When I add contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) in group Group(300:name 4;header 4;footer 4)</name>
+          <title>When I add contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) in group Group(300:name 4;header 4;footer 4)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286180585" status="passed" stop="1609286180587">
+          <name>Then the new list of contacts in group Group(300:name 4;header 4;footer 4) is equal to the old list with contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) added</name>
+          <title>Then the new list of contacts in group Group(300:name 4;header 4;footer 4) is equal to the old list with contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) added</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286180588" status="passed" stop="1609286196324">
+      <name>test_contact_group_del</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286180608" status="passed" stop="1609286180613">
+          <name>Given random group</name>
+          <title>Given random group</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286180613" status="passed" stop="1609286187454">
+          <name>Given random contact in group Group(309:name 3;header 3;footer 3)</name>
+          <title>Given random contact in group Group(309:name 3;header 3;footer 3)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286187454" status="passed" stop="1609286187456">
+          <name>Given list of contacts in group Group(309:name 3;header 3;footer 3)</name>
+          <title>Given list of contacts in group Group(309:name 3;header 3;footer 3)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286187456" status="passed" stop="1609286196323">
+          <name>When I remove contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) from group Group(309:name 3;header 3;footer 3)</name>
+          <title>When I remove contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) from group Group(309:name 3;header 3;footer 3)</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286196323" status="passed" stop="1609286196324">
+          <name>Then the new list of contacts in group Group(309:name 3;header 3;footer 3) is equal to the old list minus contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) added</name>
+          <title>Then the new list of contacts in group Group(309:name 3;header 3;footer 3) is equal to the old list minus contact Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) added</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

@@ -1,0 +1,54 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286310306" stop="1609286312531">
+  <name>test.test_phones</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286310306" status="passed" stop="1609286312530">
+      <name>test_info_on_home_page</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286310331" status="passed" stop="1609286312529">
+          <name>Given a non-empty contact list</name>
+          <title>Given a non-empty contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286312529" status="passed" stop="1609286312530">
+          <name>Then properties of contacts on home page and in db are conform</name>
+          <title>Then properties of contacts on home page and in db are conform</title>
+          <attachments/>
+          <steps>
+            <step start="1609286312530" status="passed" stop="1609286312530">
+              <name>Properties for Contact(340: {'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) and Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) are conform</name>
+              <title>Properties for Contact(340: {'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) and Contact(340: {'home': '88005553535', 'mobile': '+7-800-555-3535', 'work': '+7 (800) 555 3535', 'phone2': 'то же самое', 'email': 'mlem@newchannel.meme', 'email2': '', 'email3': '', 'firstname': 'Иван 0 (0)', 'lastname': 'Первый', 'address': 'Питер'}) are conform</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286312530" status="canceled" stop="1609286312531">
+      <name>test_phones_on_contact_view_page</name>
+      <failure>
+        <message>Skipped: unconditional skip</message>
+        <stack-trace></stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

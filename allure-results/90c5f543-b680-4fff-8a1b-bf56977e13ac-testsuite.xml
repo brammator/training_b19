@@ -1,0 +1,238 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286089461" stop="1609286146347">
+  <name>test.test_contact_add</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286089461" status="passed" stop="1609286110894">
+      <name>test_contact_add[Contact(None: {})]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286104167" status="passed" stop="1609286104172">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286104172" status="passed" stop="1609286110890">
+          <name>When I add the contact Contact(None: {}) to the list</name>
+          <title>When I add the contact Contact(None: {}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286110890" status="passed" stop="1609286110894">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286110895" status="failed" stop="1609286118142">
+      <name>test_contact_add[Contact(None: {'home': 'home_0 kn$\\nq.:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2': 'phone2_0 &lt;', 'email': 'email_0  !r^ktqn04m;?t', 'email2': 'email2_0 Hh3A@2PdhOq\\q[7  ', 'email3': 'email3_0 m_Ed}f1Mz', 'firstname': "firstname_0 :70jO:Vi')n,", 'middlename': 'middlename_0 V  (^%BFKo}7', 'lastname': 'lastname_0 !b5uP(!WGZOLu;7j', 'nickname': 'nickname_0 9UZRm Fii.|:LeJ. ', 'fax': 'fax_0 ', 'address': 'address_0 qi)ba#V', 'address2': 'address2_0 d|z', 'company': 'company_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'})]</name>
+      <failure>
+        <message>AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]
+  Left contains more items, first extra item: Contact(None: {'home': 'home_0 kn$\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2'...y_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'})
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x0000021CF7658E88&gt;, db = &lt;fixture.orm.ORMFixture object at 0x0000021CF7615588&gt;, x = 0
+json_contacts = Contact(None: {'home': 'home_0 kn$\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2'...y_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'}), check_ui = False
+
+    def test_contact_add(app, db, x, json_contacts, check_ui):
+        person = json_contacts
+        with pytest.allure.step("Given a contact list"):
+            old_contacts = db.get_contact_list()
+        with pytest.allure.step(f"When I add the contact {person} to the list"):
+            app.contact.add(person)
+        with pytest.allure.step("Then the new contact list is equal to the old list with the added contact"):
+            new_contacts = db.get_contact_list()
+            old_contacts.append(person)
+&gt;           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]
+E             Left contains more items, first extra item: Contact(None: {'home': 'home_0 kn$\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2'...y_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'})
+E             Use -v to get the full diff
+
+test\test_contact_add.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286110924" status="passed" stop="1609286110927">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286110927" status="passed" stop="1609286118120">
+          <name>When I add the contact Contact(None: {'home': 'home_0 kn$\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2': 'phone2_0 &lt;', 'email': 'email_0  !r^ktqn04m;?t', 'email2': 'email2_0 Hh3A@2PdhOq\\q[7  ', 'email3': 'email3_0 m_Ed}f1Mz', 'firstname': "firstname_0 :70jO:Vi')n,", 'middlename': 'middlename_0 V  (^%BFKo}7', 'lastname': 'lastname_0 !b5uP(!WGZOLu;7j', 'nickname': 'nickname_0 9UZRm Fii.|:LeJ. ', 'fax': 'fax_0 ', 'address': 'address_0 qi)ba#V', 'address2': 'address2_0 d|z', 'company': 'company_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'}) to the list</name>
+          <title>When I add the contact Contact(None: {'home': 'home_0 kn$\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&amp;&lt; mkH2LL ]uLOh"', 'phone2': 'phone2_0 &lt;', 'email': 'email_0  !r^ktqn04m;?t', 'email2': 'email2_0 Hh3A@2PdhOq\\q[7  ', 'email3': 'email3_0 m_Ed}f1Mz', 'firstname': "firstname_0 :70jO:Vi')n,", 'middlename': 'middlename_0 V  (^%BFKo}7', 'lastname': 'lastname_0 !b5uP(!WGZOLu;7j', 'nickname': 'nickname_0 9UZRm Fii.|:LeJ. ', 'fax': 'fax_0 ', 'address': 'address_0 qi)ba#V', 'address2': 'address2_0 d|z', 'company': 'company_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286118120" status="failed" stop="1609286118123">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286118143" status="passed" stop="1609286125212">
+      <name>test_contact_add[Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 "', 'work': 'work_1 #[jJn\\F2&lt;}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&amp;+{UA|M[q4f.', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 &lt;8M8AA5yZz', 'notes': 'notes_1 qYN.6  9.wU', 'homepage': 'homepage_1 i'})]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286118167" status="passed" stop="1609286118168">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286118168" status="passed" stop="1609286125207">
+          <name>When I add the contact Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 "', 'work': 'work_1 #[jJn\\F2&lt;}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&amp;+{UA|M[q4f/', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 &lt;8M8AA5yZz', 'notes': 'notes_1 qYN.6  9/wU', 'homepage': 'homepage_1 i'}) to the list</name>
+          <title>When I add the contact Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 "', 'work': 'work_1 #[jJn\\F2&lt;}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&amp;+{UA|M[q4f/', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 &lt;8M8AA5yZz', 'notes': 'notes_1 qYN.6  9/wU', 'homepage': 'homepage_1 i'}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286125207" status="passed" stop="1609286125211">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286125212" status="passed" stop="1609286132209">
+      <name>test_contact_add[Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h. R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\U9M\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&amp;ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU&lt; A_', 'firstname': 'firstname_2 d"&lt; ;C   ', 'middlename': 'middlename_2 !Jh` dg^&amp;bD"vt  ', 'lastname': 'lastname_2 #e&gt;P i^y  y', 'nickname': 'nickname_2 OZPAvha&gt;U^:9 ', 'fax': 'fax_2 OQ L\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('})]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286125247" status="passed" stop="1609286125252">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286125252" status="passed" stop="1609286132205">
+          <name>When I add the contact Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h/ R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\U9M\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&amp;ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU&lt; A_', 'firstname': 'firstname_2 d"&lt; ;C   ', 'middlename': 'middlename_2 !Jh` dg^&amp;bD"vt  ', 'lastname': 'lastname_2 #e&gt;P i^y  y', 'nickname': 'nickname_2 OZPAvha&gt;U^:9 ', 'fax': 'fax_2 OQ L\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('}) to the list</name>
+          <title>When I add the contact Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h/ R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\U9M\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&amp;ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU&lt; A_', 'firstname': 'firstname_2 d"&lt; ;C   ', 'middlename': 'middlename_2 !Jh` dg^&amp;bD"vt  ', 'lastname': 'lastname_2 #e&gt;P i^y  y', 'nickname': 'nickname_2 OZPAvha&gt;U^:9 ', 'fax': 'fax_2 OQ L\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286132205" status="passed" stop="1609286132208">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286132209" status="passed" stop="1609286139290">
+      <name>test_contact_add[Contact(None: {'home': 'home_3 f', 'mobile': 'mobile_3 *::Q', 'work': 'work_3 ,h&amp;4;', 'phone2': 'phone2_3 ', 'email': 'email_3 alDu', 'email2': 'email2_3 | ^9b.', 'email3': 'email3_3 ]&lt;V &lt;SupeyC!J|l):', 'firstname': 'firstname_3 an: pO *w', 'middlename': 'middlename_3 ', 'lastname': 'lastname_3 &gt;', 'nickname': 'nickname_3 zu', 'fax': 'fax_3 ,&gt;A~ P 9RF-mlvK:', 'address': 'address_3 ', 'address2': 'address2_3 ', 'company': 'company_3 ]54?y7*9mKW r', 'title': 'title_3 !7Fg&amp;f 3^L)', 'notes': 'notes_3 j]P- $b4s}=-   k', 'homepage': 'homepage_3  #3w?@5i Q~'})]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286132248" status="passed" stop="1609286132250">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286132250" status="passed" stop="1609286139287">
+          <name>When I add the contact Contact(None: {'home': 'home_3 f', 'mobile': 'mobile_3 *::Q', 'work': 'work_3 ,h&amp;4;', 'phone2': 'phone2_3 ', 'email': 'email_3 alDu', 'email2': 'email2_3 | ^9b/', 'email3': 'email3_3 ]&lt;V &lt;SupeyC!J|l):', 'firstname': 'firstname_3 an: pO *w', 'middlename': 'middlename_3 ', 'lastname': 'lastname_3 &gt;', 'nickname': 'nickname_3 zu', 'fax': 'fax_3 ,&gt;A~ P 9RF-mlvK:', 'address': 'address_3 ', 'address2': 'address2_3 ', 'company': 'company_3 ]54?y7*9mKW r', 'title': 'title_3 !7Fg&amp;f 3^L)', 'notes': 'notes_3 j]P- $b4s}=-   k', 'homepage': 'homepage_3  #3w?@5i Q~'}) to the list</name>
+          <title>When I add the contact Contact(None: {'home': 'home_3 f', 'mobile': 'mobile_3 *::Q', 'work': 'work_3 ,h&amp;4;', 'phone2': 'phone2_3 ', 'email': 'email_3 alDu', 'email2': 'email2_3 | ^9b/', 'email3': 'email3_3 ]&lt;V &lt;SupeyC!J|l):', 'firstname': 'firstname_3 an: pO *w', 'middlename': 'middlename_3 ', 'lastname': 'lastname_3 &gt;', 'nickname': 'nickname_3 zu', 'fax': 'fax_3 ,&gt;A~ P 9RF-mlvK:', 'address': 'address_3 ', 'address2': 'address2_3 ', 'company': 'company_3 ]54?y7*9mKW r', 'title': 'title_3 !7Fg&amp;f 3^L)', 'notes': 'notes_3 j]P- $b4s}=-   k', 'homepage': 'homepage_3  #3w?@5i Q~'}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286139287" status="passed" stop="1609286139290">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286139290" status="failed" stop="1609286146347">
+      <name>test_contact_add[Contact(None: {'home': 'home_4 dN  3..J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._&gt; ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y&gt;])TV fdPP+!.', 'nickname': 'nickname_4 i=O|q) )h   ~"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"})]</name>
+      <failure>
+        <message>AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]
+  Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"})
+  Use -v to get the full diff</message>
+        <stack-trace>app = &lt;fixture.application.Application object at 0x0000021CF7658E88&gt;, db = &lt;fixture.orm.ORMFixture object at 0x0000021CF7615588&gt;, x = 0
+json_contacts = Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"}), check_ui = False
+
+    def test_contact_add(app, db, x, json_contacts, check_ui):
+        person = json_contacts
+        with pytest.allure.step("Given a contact list"):
+            old_contacts = db.get_contact_list()
+        with pytest.allure.step(f"When I add the contact {person} to the list"):
+            app.contact.add(person)
+        with pytest.allure.step("Then the new contact list is equal to the old list with the added contact"):
+            new_contacts = db.get_contact_list()
+            old_contacts.append(person)
+&gt;           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]
+E             Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"})
+E             Use -v to get the full diff
+
+test\test_contact_add.py:17: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286139322" status="passed" stop="1609286139324">
+          <name>Given a contact list</name>
+          <title>Given a contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286139324" status="passed" stop="1609286146340">
+          <name>When I add the contact Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._&gt; ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y&gt;])TV fdPP+!/', 'nickname': 'nickname_4 i=O|q) )h   ~"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"}) to the list</name>
+          <title>When I add the contact Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d&lt;]KOt*oq.;m ', 'work': 'work_4 "H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._&gt; ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y&gt;])TV fdPP+!/', 'nickname': 'nickname_4 i=O|q) )h   ~"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': "homepage_4 J'+94{9|?"}) to the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286146340" status="failed" stop="1609286146344">
+          <name>Then the new contact list is equal to the old list with the added contact</name>
+          <title>Then the new contact list is equal to the old list with the added contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

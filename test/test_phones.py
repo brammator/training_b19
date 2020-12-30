@@ -8,23 +8,26 @@ from model.contact import Contact
 
 # @pytest.mark.skip
 def test_info_on_home_page(app, x, db):
-    if len(db.get_contact_list()) == 0:
-        app.contact.add(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
-                                title="Cleanliness Director", company="Dixyorochka", address="SPb",
-                                home="+78005553535", mobile="8-800-555-3535", work="8 (800) 555 3535",
-                                fax="8 800 555 35 35", email="cdur@oldfiction.book",
-                                homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816",
-                                aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
-                                notes="What are you, Oleg"))
-    contactlist = app.contact.list()
-    dbcontacts = db.get_contact_dict()
-    for contact_home in contactlist:
-        contact_edit = dbcontacts[contact_home.id]
-        assert contact_home.firstname == contact_edit.firstname
-        assert contact_home.lastname == contact_edit.lastname
-        assert contact_home.address == contact_edit.address
-        assert contact_home.phones == merge_phones_like_on_home_page(contact_edit)
-        assert contact_home.emails == merge_emails_like_on_home_page(contact_edit)
+    with pytest.allure.step("Given a non-empty contact list"):
+        if len(db.get_contact_list()) == 0:
+            app.contact.add(Contact(firstname="John", middlename="Vasilyevitch", lastname="Doe", nickname="Gryazny",
+                                    title="Cleanliness Director", company="Dixyorochka", address="SPb",
+                                    home="+78005553535", mobile="8-800-555-3535", work="8 (800) 555 3535",
+                                    fax="8 800 555 35 35", email="cdur@oldfiction.book",
+                                    homepage="localhost/addressbook", bday="1", bmonth="February", byear="1816",
+                                    aday="30", amonth="October", ayear="2020", address2="Msk", phone2="ditto",
+                                    notes="What are you, Oleg"))
+        contactlist = app.contact.list()
+        dbcontacts = db.get_contact_dict()
+    with pytest.allure.step("Then properties of contacts on home page and in db are conform"):
+        for contact_home in contactlist:
+            contact_edit = dbcontacts[contact_home.id]
+            with pytest.allure.step(f"Properties for {contact_home} and {contact_edit} are conform"):
+                assert contact_home.firstname == contact_edit.firstname
+                assert contact_home.lastname == contact_edit.lastname
+                assert contact_home.address == contact_edit.address
+                assert contact_home.phones == merge_phones_like_on_home_page(contact_edit)
+                assert contact_home.emails == merge_emails_like_on_home_page(contact_edit)
 
 
 @pytest.mark.skip

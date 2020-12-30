@@ -1,0 +1,116 @@
+{
+  "uid" : "b3f2bfb5906b95d0",
+  "name" : "test_group_add[Group(None:namePs|QO.;headerK_RWD Ie]dV;footerT)]",
+  "fullName" : "test.test_group_add.test_group_add[Group(None:namePs|QO.;headerK_RWD Ie]dV;footerT)]",
+  "historyId" : "573473ddfd7ed03217ce60b615ffd67f",
+  "time" : {
+    "start" : 1609286232859,
+    "stop" : 1609286244364,
+    "duration" : 11505
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a group list",
+      "time" : {
+        "start" : 1609286232902,
+        "stop" : 1609286232904,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the group Group(None:namePs|QO.;headerK_RWD Ie]dV;footerT) to the list",
+      "time" : {
+        "start" : 1609286232904,
+        "stop" : 1609286244361,
+        "duration" : 11457
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new group list is equal to the old list with the added group",
+      "time" : {
+        "start" : 1609286244361,
+        "stop" : 1609286244364,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_group_add"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_group_add"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_group_add[Group(None:namePs|QO.;headerK_RWD Ie]dV;footerT)]"
+  }, {
+    "name" : "package",
+    "value" : "test.test_group_add"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b3f2bfb5906b95d0.json",
+  "parameterValues" : [ ]
+}

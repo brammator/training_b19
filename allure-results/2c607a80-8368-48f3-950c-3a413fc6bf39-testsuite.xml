@@ -1,0 +1,49 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286157939" stop="1609286173634">
+  <name>test.test_contact_edit</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286157939" status="passed" stop="1609286173634">
+      <name>test_contact_edit</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286157959" status="passed" stop="1609286165791">
+          <name>Given a non-empty contact list</name>
+          <title>Given a non-empty contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286165791" status="passed" stop="1609286165791">
+          <name>Given a random contact from the list</name>
+          <title>Given a random contact from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286165791" status="passed" stop="1609286165791">
+          <name>Given a contact</name>
+          <title>Given a contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286165791" status="passed" stop="1609286173632">
+          <name>When I edit contact with new properties</name>
+          <title>When I edit contact with new properties</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286173632" status="passed" stop="1609286173634">
+          <name>Then the new list is equal to the old list with selected contact modified</name>
+          <title>Then the new list is equal to the old list with selected contact modified</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

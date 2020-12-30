@@ -40,7 +40,7 @@ class ORMFixture:
     def __init__(self, host, database, user, password):
         self.db.bind('mysql', host=host, database=database, user=user, password=password, autocommit=True)
         self.db.generate_mapping()
-        sql_debug(True)
+        # sql_debug(True)
 
     def convert_groups_to_model(self, groups):
         def convert(group):

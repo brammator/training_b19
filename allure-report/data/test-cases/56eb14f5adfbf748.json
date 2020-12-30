@@ -1,0 +1,63 @@
+{
+  "uid" : "56eb14f5adfbf748",
+  "name" : "test_phones_on_contact_view_page",
+  "fullName" : "test.test_phones.test_phones_on_contact_view_page",
+  "historyId" : "29827f509b35331c3f296325c05d9595",
+  "time" : {
+    "start" : 1609286312530,
+    "stop" : 1609286312531,
+    "duration" : 1
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "skipped",
+  "statusMessage" : "Skipped: unconditional skip",
+  "statusTrace" : "",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_phones_on_contact_view_page"
+  }, {
+    "name" : "package",
+    "value" : "test.test_phones"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "56eb14f5adfbf748.json",
+  "parameterValues" : [ ]
+}

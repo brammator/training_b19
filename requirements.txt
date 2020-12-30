@@ -1,9 +1,11 @@
 ipython
-selenium~=3.141.0
-pytest~=6.1.2
-pony~=0.7.14
-jsonpickle~=1.4.2
+selenium
+pytest==2.9.0
+pony
+jsonpickle
 setuptools
 wheel
 PyMySQL
-pytest-bdd~=4.0.2
+pytest-bdd
+lxml
+pytest-allure-adaptor

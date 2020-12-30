@@ -1,0 +1,74 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286267517" stop="1609286287132">
+  <name>test.test_group_del</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286267517" status="passed" stop="1609286272044">
+      <name>test_group_del_random</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286267559" status="passed" stop="1609286267564">
+          <name>Given a non-empty group list</name>
+          <title>Given a non-empty group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286267564" status="passed" stop="1609286267564">
+          <name>Given a random group from the list</name>
+          <title>Given a random group from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286267564" status="passed" stop="1609286272039">
+          <name>When I delete a group #13 from the list</name>
+          <title>When I delete a group #13 from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286272039" status="passed" stop="1609286272044">
+          <name>Then the new list is equal to the old list without the deleted group</name>
+          <title>Then the new list is equal to the old list without the deleted group</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286272045" status="passed" stop="1609286287132">
+      <name>test_group_del_all</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286272077" status="passed" stop="1609286272080">
+          <name>Given a non-empty group list</name>
+          <title>Given a non-empty group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286272080" status="passed" stop="1609286287131">
+          <name>When I delete all groups</name>
+          <title>When I delete all groups</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286287131" status="passed" stop="1609286287132">
+          <name>Then group list is empty</name>
+          <title>Then group list is empty</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

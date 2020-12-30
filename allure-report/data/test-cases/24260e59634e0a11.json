@@ -1,0 +1,116 @@
+{
+  "uid" : "24260e59634e0a11",
+  "name" : "test_contact_add[Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 \"', 'work': 'work_1 #[jJn\\\\F2<}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&+{UA|M[q4f.', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 <8M8AA5yZz', 'notes': 'notes_1 qYN.6  9.wU', 'homepage': 'homepage_1 i'})]",
+  "fullName" : "test.test_contact_add.test_contact_add[Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 \"', 'work': 'work_1 #[jJn\\\\F2<}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&+{UA|M[q4f.', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 <8M8AA5yZz', 'notes': 'notes_1 qYN.6  9.wU', 'homepage': 'homepage_1 i'})]",
+  "historyId" : "35feffa9ca359c300533862e9dc09b0b",
+  "time" : {
+    "start" : 1609286118143,
+    "stop" : 1609286125212,
+    "duration" : 7069
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1609286118167,
+        "stop" : 1609286118168,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the contact Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 \"', 'work': 'work_1 #[jJn\\\\F2<}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&+{UA|M[q4f/', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 <8M8AA5yZz', 'notes': 'notes_1 qYN.6  9/wU', 'homepage': 'homepage_1 i'}) to the list",
+      "time" : {
+        "start" : 1609286118168,
+        "stop" : 1609286125207,
+        "duration" : 7039
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new contact list is equal to the old list with the added contact",
+      "time" : {
+        "start" : 1609286125207,
+        "stop" : 1609286125211,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_contact_add[Contact(None: {'home': 'home_1 VNT:hr 6+ Ia SH', 'mobile': 'mobile_1 \"', 'work': 'work_1 #[jJn\\\\F2<}_gE`+H |', 'phone2': 'phone2_1 y?A', 'email': 'email_1 oD-lNifwET', 'email2': 'email2_1 Dd', 'email3': 'email3_1 |_5Qo$ G*q3sXu', 'firstname': 'firstname_1 { ', 'middlename': 'middlename_1 pB (&+{UA|M[q4f.', 'lastname': 'lastname_1 } (v@', 'nickname': 'nickname_1 $@e%\\\\n+!wHQ5rwsDh', 'fax': 'fax_1 lOLKZeq.KT0  15', 'address': 'address_1 t*CJP$\\\\ j@IH', 'address2': 'address2_1 3{5', 'company': 'company_1 Q[EXF=', 'title': 'title_1 <8M8AA5yZz', 'notes': 'notes_1 qYN.6  9.wU', 'homepage': 'homepage_1 i'})]"
+  }, {
+    "name" : "package",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "24260e59634e0a11.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,116 @@
+{
+  "uid" : "edb1ba6597a288aa",
+  "name" : "test_contact_add[Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h. R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\\\U9M\\\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU< A_', 'firstname': 'firstname_2 d\"< ;C   ', 'middlename': 'middlename_2 !Jh` dg^&bD\"vt  ', 'lastname': 'lastname_2 #e>P i^y  y', 'nickname': 'nickname_2 OZPAvha>U^:9 ', 'fax': 'fax_2 OQ L\\\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh\"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('})]",
+  "fullName" : "test.test_contact_add.test_contact_add[Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h. R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\\\U9M\\\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU< A_', 'firstname': 'firstname_2 d\"< ;C   ', 'middlename': 'middlename_2 !Jh` dg^&bD\"vt  ', 'lastname': 'lastname_2 #e>P i^y  y', 'nickname': 'nickname_2 OZPAvha>U^:9 ', 'fax': 'fax_2 OQ L\\\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh\"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('})]",
+  "historyId" : "1696af3741ce4925f5f7f134a4081f05",
+  "time" : {
+    "start" : 1609286125212,
+    "stop" : 1609286132209,
+    "duration" : 6997
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1609286125247,
+        "stop" : 1609286125252,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add the contact Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h/ R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\\\U9M\\\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU< A_', 'firstname': 'firstname_2 d\"< ;C   ', 'middlename': 'middlename_2 !Jh` dg^&bD\"vt  ', 'lastname': 'lastname_2 #e>P i^y  y', 'nickname': 'nickname_2 OZPAvha>U^:9 ', 'fax': 'fax_2 OQ L\\\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh\"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('}) to the list",
+      "time" : {
+        "start" : 1609286125252,
+        "stop" : 1609286132205,
+        "duration" : 6953
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new contact list is equal to the old list with the added contact",
+      "time" : {
+        "start" : 1609286132205,
+        "stop" : 1609286132208,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "REZERV21450"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "14460-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_contact_add[Contact(None: {'home': 'home_2 =,n4GP[g', 'mobile': 'mobile_2 okIX', 'work': 'work_2 aa[:2==h. R8O', 'phone2': 'phone2_2   d', 'email': 'email_2 y\\\\U9M\\\\u n:#J7 ^]', 'email2': 'email2_2 Xj$P`[=*1&ZTb{T@S', 'email3': 'email3_2 ZR 0Y  q8v5  iU< A_', 'firstname': 'firstname_2 d\"< ;C   ', 'middlename': 'middlename_2 !Jh` dg^&bD\"vt  ', 'lastname': 'lastname_2 #e>P i^y  y', 'nickname': 'nickname_2 OZPAvha>U^:9 ', 'fax': 'fax_2 OQ L\\\\Faf{', 'address': 'address_2 }J.^T~qR', 'address2': 'address2_2 {x7Oh\"mteis', 'company': 'company_2  .%cf$~`( k Rj_t', 'title': 'title_2 `8a9Nym@G', 'notes': 'notes_2 ]0 9+x@', 'homepage': 'homepage_2 ('})]"
+  }, {
+    "name" : "package",
+    "value" : "test.test_contact_add"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "edb1ba6597a288aa.json",
+  "parameterValues" : [ ]
+}

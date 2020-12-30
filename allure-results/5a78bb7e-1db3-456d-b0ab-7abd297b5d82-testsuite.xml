@@ -1,0 +1,49 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286287133" stop="1609286310305">
+  <name>test.test_group_edit</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286287133" status="passed" stop="1609286310305">
+      <name>test_group_edit</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286287166" status="passed" stop="1609286298603">
+          <name>Given a non-empty group list</name>
+          <title>Given a non-empty group list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286298603" status="passed" stop="1609286298603">
+          <name>Given a random group from the list</name>
+          <title>Given a random group from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286298603" status="passed" stop="1609286298603">
+          <name>Given a group</name>
+          <title>Given a group</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286298603" status="passed" stop="1609286310304">
+          <name>When I edit group with new properties</name>
+          <title>When I edit group with new properties</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286310304" status="passed" stop="1609286310305">
+          <name>Then the new list is equal to the old list with selected group modified</name>
+          <title>Then the new list is equal to the old list with selected group modified</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

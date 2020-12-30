@@ -1,0 +1,74 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1609286146348" stop="1609286157938">
+  <name>test.test_contact_del</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1609286146348" status="passed" stop="1609286153461">
+      <name>test_contact_del_nth</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286146368" status="passed" stop="1609286146375">
+          <name>Given a non-empty contact list</name>
+          <title>Given a non-empty contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286146375" status="passed" stop="1609286146375">
+          <name>Given a random contact from the list</name>
+          <title>Given a random contact from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286146375" status="passed" stop="1609286153458">
+          <name>When I delete a contact #0 from the list</name>
+          <title>When I delete a contact #0 from the list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286153458" status="passed" stop="1609286153461">
+          <name>Then the new list is equal to the old list without the deleted contact</name>
+          <title>Then the new list is equal to the old list without the deleted contact</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1609286153462" status="passed" stop="1609286157938">
+      <name>test_contact_del_all</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="14460-MainThread"/>
+        <label name="host" value="REZERV21450"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1609286153489" status="passed" stop="1609286153491">
+          <name>Given a non-empty contact list</name>
+          <title>Given a non-empty contact list</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286153491" status="passed" stop="1609286157937">
+          <name>When I delete all contacts</name>
+          <title>When I delete all contacts</title>
+          <attachments/>
+          <steps/>
+        </step>
+        <step start="1609286157937" status="passed" stop="1609286157938">
+          <name>Then contact list is empty</name>
+          <title>Then contact list is empty</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

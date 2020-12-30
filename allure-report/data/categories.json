@@ -1,0 +1,77 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\n  Left contains more items, first extra item: Contact(None: {'home': 'home_0 kn$\\\\nq/:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&< mkH2LL ]uLOh\"', 'phone2'...y_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'})\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_contact_add[Contact(None: {'home': 'home_0 kn$\\\\nq.:%AJ', 'mobile': 'mobile_0 i=G', 'work': 'work_0  3(&< mkH2LL ]uLOh\"', 'phone2': 'phone2_0 <', 'email': 'email_0  !r^ktqn04m;?t', 'email2': 'email2_0 Hh3A@2PdhOq\\\\q[7  ', 'email3': 'email3_0 m_Ed}f1Mz', 'firstname': \"firstname_0 :70jO:Vi')n,\", 'middlename': 'middlename_0 V  (^%BFKo}7', 'lastname': 'lastname_0 !b5uP(!WGZOLu;7j', 'nickname': 'nickname_0 9UZRm Fii.|:LeJ. ', 'fax': 'fax_0 ', 'address': 'address_0 qi)ba#V', 'address2': 'address2_0 d|z', 'company': 'company_0 f67GK % ~S 8 }', 'title': 'title_0 dC|', 'notes': 'notes_0 iVQots)JO _2 M  C', 'homepage': 'homepage_0  F }V#K;8'})]",
+        "uid" : "3d1fec1b2393e6d1",
+        "parentUid" : "6e4717a21c80cc044e990ebd89bbbd51",
+        "status" : "failed",
+        "time" : {
+          "start" : 1609286110895,
+          "stop" : 1609286118142,
+          "duration" : 7247
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6e4717a21c80cc044e990ebd89bbbd51"
+    }, {
+      "name" : "AssertionError: assert [Contact(329:...ess_3'}), ...] == [Contact(329: ...ess_3'}), ...]\n  Left contains more items, first extra item: Contact(None: {'home': 'home_4 dN  3./J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': '...': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_contact_add[Contact(None: {'home': 'home_4 dN  3..J3fc1*', 'mobile': 'mobile_4 ,d<]KOt*oq.;m ', 'work': 'work_4 \"H{I', 'phone2': 'phone2_4  p` ^n', 'email': 'email_4 qKypFdt6gS!P\\\\#', 'email2': 'email2_4 :TKT;YIKj', 'email3': 'email3_4 QrB$Me8=iLcn)Q', 'firstname': 'firstname_4 FB._> ', 'middlename': 'middlename_4 Gh6]~', 'lastname': 'lastname_4 Hj$o y>])TV fdPP+!.', 'nickname': 'nickname_4 i=O|q) )h   ~\"j1[Z', 'fax': 'fax_4 =] ; `4Y', 'address': 'address_4 `', 'address2': 'address2_4 rxN', 'company': 'company_4 ]qa,( Vz K$RKlJEOA', 'title': 'title_4 (', 'notes': 'notes_4 1iA{Y', 'homepage': \"homepage_4 J'+94{9|?\"})]",
+        "uid" : "c554eadc096c0072",
+        "parentUid" : "9dcdaf66545a8d556349ee3a3c8b3e8d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1609286139290,
+          "stop" : 1609286146347,
+          "duration" : 7057
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9dcdaf66545a8d556349ee3a3c8b3e8d"
+    }, {
+      "name" : "AssertionError: assert [Group(294:От...ooter 3), ...] == [Group(294:Отр...ooter 3), ...]\n  At index 51 diff: Group(None:name@<;header-\\`[tD4o6 J~;footerR-J$ h]@xu#gxTAiQ) != Group(347:name@;header-`[tD4o6 J~;footerR-J$ h]@xu#gxTAiQ)\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_group_add[Group(None:name@<;header-\\`[tD4o6 J~;footerR-J$ h]@xu#gxTAiQ)]",
+        "uid" : "65a78932d223ab2c",
+        "parentUid" : "b4392c14253e4543ab2e104a8a69eed9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1609286244365,
+          "stop" : 1609286255977,
+          "duration" : 11612
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b4392c14253e4543ab2e104a8a69eed9"
+    }, {
+      "name" : "AssertionError: assert [Group(294:От...ooter 3), ...] == [Group(294:Отр...ooter 3), ...]\n  Left contains more items, first extra item: Group(None:name'Y? ;header7%g: )!;footery\"X)\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_group_add[Group(None:name'Y? ;header7%g: )!;footery\"X)]",
+        "uid" : "beba85816c658a3e",
+        "parentUid" : "97b9fb5b1937cc639fba31dc51c78df3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1609286255978,
+          "stop" : 1609286267517,
+          "duration" : 11539
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "97b9fb5b1937cc639fba31dc51c78df3"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
